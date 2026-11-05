@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="6" result="Passed" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-05 15:55:26Z" end-time="2026-11-05 15:55:32Z" duration="5.6646771">
+  <test-suite type="TestSuite" id="1013" name="GamePrototype" fullname="GamePrototype" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-05 15:55:26Z" end-time="2026-11-05 15:55:32Z" duration="5.664677" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1009" name="Prototype.PlayModeTests.dll" fullname="C:/Users/mycom/GamePrototype/Library/ScriptAssemblies/Prototype.PlayModeTests.dll" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-11-05 15:55:26Z" end-time="2026-11-05 15:55:32Z" duration="5.660227" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="24812" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="DialoguePlayModeTests" fullname="DialoguePlayModeTests" classname="DialoguePlayModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-05 15:55:26Z" end-time="2026-11-05 15:55:31Z" duration="4.449319" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1003" name="ClosestDoorOrNpcReceivesOnlyOneInteraction" fullname="DialoguePlayModeTests.ClosestDoorOrNpcReceivesOnlyOneInteraction" methodname="ClosestDoorOrNpcReceivesOnlyOneInteraction" classname="DialoguePlayModeTests" runstate="Runnable" seed="1584928351" result="Passed" start-time="2026-11-05 15:55:26Z" end-time="2026-11-05 15:55:28Z" duration="1.509385" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1004" name="DialogueTypingMouseChoicesAndRepeatRestoreInput" fullname="DialoguePlayModeTests.DialogueTypingMouseChoicesAndRepeatRestoreInput" methodname="DialogueTypingMouseChoicesAndRepeatRestoreInput" classname="DialoguePlayModeTests" runstate="Runnable" seed="1511224386" result="Passed" start-time="2026-11-05 15:55:28Z" end-time="2026-11-05 15:55:30Z" duration="2.114104" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1002" name="LobbyNpcHasCorrectAppearanceAndExistingHallIsPreserved" fullname="DialoguePlayModeTests.LobbyNpcHasCorrectAppearanceAndExistingHallIsPreserved" methodname="LobbyNpcHasCorrectAppearanceAndExistingHallIsPreserved" classname="DialoguePlayModeTests" runstate="Runnable" seed="1849826045" result="Passed" start-time="2026-11-05 15:55:30Z" end-time="2026-11-05 15:55:31Z" duration="0.818279" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+      </test-suite>
+      <test-suite type="TestFixture" id="1005" name="PrototypeEnemyPlayModeTests" fullname="PrototypeEnemyPlayModeTests" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-05 15:55:31Z" end-time="2026-11-05 15:55:32Z" duration="1.209981" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1008" name="EnemyDetectsAndMovesTowardPlayer" fullname="PrototypeEnemyPlayModeTests.EnemyDetectsAndMovesTowardPlayer" methodname="EnemyDetectsAndMovesTowardPlayer" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="1433343586" result="Passed" start-time="2026-11-05 15:55:31Z" end-time="2026-11-05 15:55:32Z" duration="0.795513" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1007" name="EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" fullname="PrototypeEnemyPlayModeTests.EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" methodname="EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="1546782631" result="Passed" start-time="2026-11-05 15:55:32Z" end-time="2026-11-05 15:55:32Z" duration="0.211888" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Enemy render: world=(24.97, 24.97, 0.00), camera=(23.00, 23.00, -10.00), viewport=(0.68, 0.75, 10.00), sprite=Placeholder_0, sortingLayer=Default, order=2, mask=-1, room=0 Hall, active=True
+Enemy camera capture: C:\Users\mycom\GamePrototype\TestResults\PrototypeEnemy.png
+]]></output>
+        </test-case>
+        <test-case id="1006" name="OriginalEnemyIsActiveInHallAndClearOfObstacles" fullname="PrototypeEnemyPlayModeTests.OriginalEnemyIsActiveInHallAndClearOfObstacles" methodname="OriginalEnemyIsActiveInHallAndClearOfObstacles" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="78655175" result="Passed" start-time="2026-11-05 15:55:32Z" end-time="2026-11-05 15:55:32Z" duration="0.201142" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Enemy test: world=(24.94, 24.94, 0.00), camera=(23.00, 23.00, -10.00), active=True, room=0 Hall
+Saving results to: C:/Users/mycom/AppData/LocalLow/DefaultCompany/GamePrototype\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

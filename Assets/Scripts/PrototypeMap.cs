@@ -81,6 +81,9 @@ public static class PrototypeMap
         Link(lobby, new Vector2(48, 8), pantry, new Vector2(48, 8), Vector2.down);
         Link(lobby, new Vector2(46, 23), hall, new Vector2(46, 23), Vector2.left);
 
+        CreateNpc(lobby, new Vector2(52, 26));
+        Box(lobby, "NPC Adjacent Object", new Vector2(53.35f, 26), new Vector2(.8f, .8f), new Color(.28f, .64f, .48f), true, 1);
+
         // Preserve the original crates, colliders and their relative arrangement.
         // The old room's origin maps to the middle of the new 20 x 14 hall.
         foreach (string name in new[] { "Crate Center", "Crate NW", "Crate SE" })
@@ -102,6 +105,30 @@ public static class PrototypeMap
         var transitions = root.AddComponent<RoomTransition>();
         transitions.rooms = new[] { corridor, lobby, hall, cctv, office3, pantry, office5, president, records, lift, exit, bathroom, stairs };
         transitions.startingRoom = hall; transitions.player = player.transform; transitions.followCamera = camera;
+        var hud = Object.FindFirstObjectByType<GameHUD>();
+        if (hud != null && hud.GetComponent<Canvas>() != null)
+        {
+            var dialogue = root.AddComponent<DialogueController>();
+            dialogue.Initialize(player, hud.GetComponent<Canvas>()); transitions.dialogue = dialogue;
+        }
+        else Debug.LogError("Dialogue requires the existing HUD canvas.");
+    }
+
+    static void CreateNpc(RoomArea room, Vector2 position)
+    {
+        var obj = new GameObject("Test NPC", typeof(MeshFilter), typeof(MeshRenderer), typeof(NpcInteractable));
+        obj.transform.SetParent(room.transform); obj.transform.position = position;
+        var npc = obj.GetComponent<NpcInteractable>(); npc.dialogue = Resources.Load<DialogueData>("TestNpcDialogue");
+        if (npc.dialogue == null) Debug.LogError("TestNpcDialogue asset is missing.");
+        var mesh = new Mesh { name = "NPC Triangle" };
+        mesh.vertices = new[] { new Vector3(-.36f, -.3f), new Vector3(.36f, -.3f), new Vector3(0, .4f) };
+        mesh.triangles = new[] { 0, 1, 2 }; mesh.RecalculateBounds(); obj.GetComponent<MeshFilter>().mesh = mesh; npc.ownedMesh = mesh;
+        var material = new Material(Shader.Find("Sprites/Default")); material.color = new Color(1f, .35f, .65f); npc.ownedMaterial = material;
+        var renderer = obj.GetComponent<MeshRenderer>(); renderer.material = material; renderer.sortingOrder = 2;
+        var label = new GameObject("NPC Name", typeof(TextMesh)); label.transform.SetParent(obj.transform, false); label.transform.localPosition = new Vector3(0, .6f, 0);
+        var text = label.GetComponent<TextMesh>(); text.text = "NPC"; text.anchor = TextAnchor.LowerCenter; text.alignment = TextAlignment.Center; text.fontSize = 40; text.characterSize = .035f; text.color = Color.white;
+        text.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        var textRenderer = label.GetComponent<MeshRenderer>(); textRenderer.material = text.font.material; textRenderer.sortingOrder = 5;
     }
 
     static RoomArea Area(Transform parent, string name, Vector2 center, Vector2 size)

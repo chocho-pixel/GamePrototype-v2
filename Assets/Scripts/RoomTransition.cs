@@ -9,9 +9,11 @@ public class RoomTransition : MonoBehaviour
     public RoomArea startingRoom;
     public Transform player;
     public FollowCamera followCamera;
+    public DialogueController dialogue;
     [Min(.01f)] public float fadeDuration = .2f;
     RoomArea currentRoom;
     RoomDoor nearby;
+    NpcInteractable nearbyNpc;
     bool transitioning;
     float fade;
 
@@ -32,9 +34,14 @@ public class RoomTransition : MonoBehaviour
     void Update()
     {
         nearby = null;
-        if (transitioning || currentRoom == null || player == null) return;
+        nearbyNpc = null;
+        if (transitioning || currentRoom == null || player == null || (dialogue != null && dialogue.IsOpen))
+        {
+            if (dialogue != null) dialogue.SetNearby(null);
+            return;
+        }
         var health = player.GetComponent<Health>();
-        if (health != null && health.IsDead) return;
+        if (health != null && health.IsDead) { if (dialogue != null) dialogue.SetNearby(null); return; }
         float closest = float.PositiveInfinity;
         foreach (var door in currentRoom.GetComponentsInChildren<RoomDoor>())
         {
@@ -44,8 +51,21 @@ public class RoomTransition : MonoBehaviour
             float distance = Vector2.Distance(player.position, door.transform.position);
             if (distance <= door.interactionRadius && distance < closest) { closest = distance; nearby = door; }
         }
-        if (nearby != null && Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
-            StartCoroutine(ChangeRoom(nearby));
+        if (dialogue != null) foreach (var candidate in currentRoom.GetComponentsInChildren<NpcInteractable>())
+        {
+            if (!candidate.CanTalk) continue;
+            float distance = Vector2.Distance(player.position, candidate.transform.position);
+            if (distance <= candidate.interactionRadius && distance < closest) { closest = distance; nearbyNpc = candidate; nearby = null; }
+        }
+        if (dialogue != null) dialogue.SetNearby(nearbyNpc);
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
+            Interact();
+    }
+
+    void Interact()
+    {
+        if (nearbyNpc != null) dialogue.Begin(nearbyNpc);
+        else if (nearby != null) StartCoroutine(ChangeRoom(nearby));
     }
 
     IEnumerator ChangeRoom(RoomDoor door)
