@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-05 15:00:56Z" end-time="2026-11-05 15:00:57Z" duration="1.2089165">
+  <test-suite type="TestSuite" id="1009" name="GamePrototype" fullname="GamePrototype" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-11-05 15:00:56Z" end-time="2026-11-05 15:00:57Z" duration="1.208917" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1005" name="Prototype.PlayModeTests.dll" fullname="C:/Users/mycom/GamePrototype/Library/ScriptAssemblies/Prototype.PlayModeTests.dll" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-11-05 15:00:56Z" end-time="2026-11-05 15:00:57Z" duration="1.204563" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="6304" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="PrototypeEnemyPlayModeTests" fullname="PrototypeEnemyPlayModeTests" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-11-05 15:00:56Z" end-time="2026-11-05 15:00:57Z" duration="1.203739" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1004" name="EnemyDetectsAndMovesTowardPlayer" fullname="PrototypeEnemyPlayModeTests.EnemyDetectsAndMovesTowardPlayer" methodname="EnemyDetectsAndMovesTowardPlayer" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="253891234" result="Failed" start-time="2026-11-05 15:00:56Z" end-time="2026-11-05 15:00:57Z" duration="0.825949" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Enemy did not move while the player was in the hall.
+  Expected: greater than 0.0500000007f
+  But was:  0.0f
+]]></message>
+            <stack-trace><![CDATA[at PrototypeEnemyPlayModeTests+<EnemyDetectsAndMovesTowardPlayer>d__6.MoveNext () [0x000fb] in C:\Users\mycom\GamePrototype\Assets\Tests\PlayMode\PrototypeEnemyPlayModeTests.cs:122
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1003" name="EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" fullname="PrototypeEnemyPlayModeTests.EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" methodname="EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="1174595676" result="Failed" start-time="2026-11-05 15:00:57Z" end-time="2026-11-05 15:00:57Z" duration="0.188321" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Enemy bounds are outside the camera frustum.
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at PrototypeEnemyPlayModeTests+<EnemyRendererIsWithinCameraAndVisibleInRenderedPixels>d__5.MoveNext () [0x000c2] in C:\Users\mycom\GamePrototype\Assets\Tests\PlayMode\PrototypeEnemyPlayModeTests.cs:81
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1002" name="OriginalEnemyIsActiveInHallAndClearOfObstacles" fullname="PrototypeEnemyPlayModeTests.OriginalEnemyIsActiveInHallAndClearOfObstacles" methodname="OriginalEnemyIsActiveInHallAndClearOfObstacles" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="1202570664" result="Failed" start-time="2026-11-05 15:00:57Z" end-time="2026-11-05 15:00:57Z" duration="0.182367" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: in range (16.35,35.65)
+  But was:  5.0f
+]]></message>
+            <stack-trace><![CDATA[at PrototypeEnemyPlayModeTests+<OriginalEnemyIsActiveInHallAndClearOfObstacles>d__4.MoveNext () [0x0019a] in C:\Users\mycom\GamePrototype\Assets\Tests\PlayMode\PrototypeEnemyPlayModeTests.cs:63
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\Library\PackageCache\com.unity.test-framework@bd7f943e9647\UnityEngine.TestRunner\NUnitExtensions\Attributes\TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Saving results to: C:/Users/mycom/AppData/LocalLow/DefaultCompany/GamePrototype\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Passed" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-11-05 15:03:08Z" end-time="2026-11-05 15:03:09Z" duration="1.3192436">
+  <test-suite type="TestSuite" id="1009" name="GamePrototype" fullname="GamePrototype" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-05 15:03:08Z" end-time="2026-11-05 15:03:09Z" duration="1.319244" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1005" name="Prototype.PlayModeTests.dll" fullname="C:/Users/mycom/GamePrototype/Library/ScriptAssemblies/Prototype.PlayModeTests.dll" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-05 15:03:08Z" end-time="2026-11-05 15:03:09Z" duration="1.314646" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="9404" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestFixture" id="1001" name="PrototypeEnemyPlayModeTests" fullname="PrototypeEnemyPlayModeTests" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-11-05 15:03:08Z" end-time="2026-11-05 15:03:09Z" duration="1.313781" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-case id="1004" name="EnemyDetectsAndMovesTowardPlayer" fullname="PrototypeEnemyPlayModeTests.EnemyDetectsAndMovesTowardPlayer" methodname="EnemyDetectsAndMovesTowardPlayer" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="292822981" result="Passed" start-time="2026-11-05 15:03:08Z" end-time="2026-11-05 15:03:08Z" duration="0.844319" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1003" name="EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" fullname="PrototypeEnemyPlayModeTests.EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" methodname="EnemyRendererIsWithinCameraAndVisibleInRenderedPixels" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="1396760363" result="Passed" start-time="2026-11-05 15:03:08Z" end-time="2026-11-05 15:03:09Z" duration="0.241254" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Enemy render: world=(24.97, 24.97, 0.00), camera=(23.00, 23.00, -10.00), viewport=(0.68, 0.75, 10.00), sprite=Placeholder_0, sortingLayer=Default, order=2, mask=-1, room=0 Hall, active=True
+]]></output>
+        </test-case>
+        <test-case id="1002" name="OriginalEnemyIsActiveInHallAndClearOfObstacles" fullname="PrototypeEnemyPlayModeTests.OriginalEnemyIsActiveInHallAndClearOfObstacles" methodname="OriginalEnemyIsActiveInHallAndClearOfObstacles" classname="PrototypeEnemyPlayModeTests" runstate="Runnable" seed="999872069" result="Passed" start-time="2026-11-05 15:03:09Z" end-time="2026-11-05 15:03:09Z" duration="0.220269" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Enemy test: world=(24.97, 24.97, 0.00), camera=(23.00, 23.00, -10.00), active=True, room=0 Hall
+Saving results to: C:/Users/mycom/AppData/LocalLow/DefaultCompany/GamePrototype\TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

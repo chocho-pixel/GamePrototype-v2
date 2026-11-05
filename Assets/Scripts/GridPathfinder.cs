@@ -6,6 +6,7 @@ public class GridPathfinder : MonoBehaviour
     [SerializeField] Vector2 min = new Vector2(-9, -5), max = new Vector2(9, 5);
     [SerializeField] float cellSize = .5f, clearance = .38f;
     [SerializeField] LayerMask obstacles;
+    public void SetBounds(Vector2 minimum, Vector2 maximum) { min = minimum; max = maximum; }
     int Width => Mathf.RoundToInt((max.x - min.x) / cellSize);
     int Height => Mathf.RoundToInt((max.y - min.y) / cellSize);
     Vector2 World(int x, int y) => min + new Vector2((x + .5f) * cellSize, (y + .5f) * cellSize);

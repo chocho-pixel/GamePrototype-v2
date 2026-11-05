@@ -2,15 +2,23 @@
 [RequireComponent(typeof(Camera))]
 public class FollowCamera : MonoBehaviour
 {
-    public Transform target; [SerializeField] Vector2 roomSize=new Vector2(18,10); [SerializeField] float smoothTime=.18f;
+    public Transform target; [SerializeField] float smoothTime=.18f;
     Vector3 velocity; Camera cam;
-    void Awake(){cam=GetComponent<Camera>();}
+    void Awake(){cam=GetComponent<Camera>(); cam.clearFlags=CameraClearFlags.SolidColor; cam.backgroundColor=Color.black;}
+    public void SnapToTarget()
+    {
+        if(target==null) return;
+        UpdatePosition(true);
+    }
     void LateUpdate()
     {
         if(target==null)return;
-        float aspect=Mathf.Max(.01f,cam.aspect); cam.orthographicSize=Mathf.Min(4f,roomSize.y*.5f,roomSize.x*.5f/aspect);
-        float halfH=cam.orthographicSize, halfW=halfH*aspect;
-        Vector3 desired=new Vector3(Mathf.Clamp(target.position.x,-roomSize.x*.5f+halfW,roomSize.x*.5f-halfW),Mathf.Clamp(target.position.y,-roomSize.y*.5f+halfH,roomSize.y*.5f-halfH),transform.position.z);
-        transform.position=Vector3.SmoothDamp(transform.position,desired,ref velocity,smoothTime);
+        UpdatePosition(false);
+    }
+    void UpdatePosition(bool snap)
+    {
+        Vector3 desired=new Vector3(target.position.x,target.position.y,transform.position.z);
+        if(snap) velocity=Vector3.zero;
+        transform.position=snap ? desired : Vector3.SmoothDamp(transform.position,desired,ref velocity,smoothTime);
     }
 }
